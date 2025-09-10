@@ -3,61 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBDCortex - Comprehensive Mission Briefing</title>
+    <meta name="description" content="OBDCortex organizational structure and team roles">
+    <title>OBDCortex - Team Structure & Roles</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-bg: #0D1B2A;
+            --secondary-bg: #1B263B;
+            --border-color: #415A77;
+            --accent-color: #FCA311;
+            --heading-color: #3A86FF;
+            --text-primary: #FFFFFF;
+            --text-secondary: #D1D5DB;
+            --text-tertiary: #9CA3AF;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0D1B2A;
+            background-color: var(--primary-bg);
+            color: var(--text-secondary);
         }
+        
         .role-card {
-            background-color: #1B263B;
-            border: 1px solid #415A77;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
         }
+        
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.4), 0 8px 10px -2px rgba(0, 0, 0, 0.3);
+        }
+        
         .mission-quote {
-            border-left: 4px solid #FCA311;
+            border-left: 4px solid var(--accent-color);
             background-color: rgba(252, 163, 17, 0.05);
         }
-        .highlight-text { color: #FCA311; }
-        .section-title { color: #3A86FF; }
+        
+        .highlight-text { 
+            color: var(--accent-color); 
+        }
+        
+        .section-title { 
+            color: var(--heading-color); 
+        }
+        
         .details-summary {
             cursor: pointer;
             outline: none;
             transition: background-color 0.2s ease;
         }
-        .details-summary::-webkit-details-marker { display: none; }
-        .details-summary .arrow { transition: transform 0.3s ease; }
-        details[open] .details-summary .arrow { transform: rotate(90deg); }
+        
+        .details-summary::-webkit-details-marker { 
+            display: none; 
+        }
+        
+        .details-summary .arrow { 
+            transition: transform 0.3s ease; 
+        }
+        
+        details[open] .details-summary .arrow { 
+            transform: rotate(90deg); 
+        }
+        
+        @media print {
+            .role-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-300">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <header class="text-center mb-20">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white">
-                OBDCortex <span class="highlight-text">Mission Control</span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header class="text-center mb-16">
+            <div class="mb-4">
+                <!-- Company Logo Placeholder -->
+                <svg class="w-16 h-16 mx-auto highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                OBDCortex <span class="highlight-text">Organizational Structure</span>
             </h1>
-            <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">A comprehensive briefing on team roles, combining high-level strategy with detailed operational directives.</p>
+            <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                A comprehensive overview of team roles, responsibilities, and interdepartmental collaboration framework.
+            </p>
+            <div class="mt-8 inline-flex rounded-md shadow">
+                <a href="#" class="px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                    Download Structure PDF
+                </a>
+            </div>
         </header>
 
-        <main class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Team Member 1 -->
-            <article class="role-card rounded-xl p-8 flex flex-col">
+            <article class="role-card rounded-xl p-8 flex flex-col h-full">
                 <div class="flex items-center gap-4 mb-6">
-                    <svg class="h-12 w-12 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V8.25a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 8.25v7.5a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                    <div><h2 class="text-3xl font-bold text-white">Embedded Linux Engineer</h2><p class="text-lg font-medium text-gray-400">Team Member 1</p></div>
+                    <div class="rounded-full bg-blue-900/50 p-3">
+                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Embedded Linux Engineer</h2>
+                        <p class="text-lg font-medium text-gray-400">Core Infrastructure Development</p>
+                    </div>
                 </div>
-                <blockquote class="mission-quote p-4 rounded-r-lg my-6"><p class="text-lg italic text-gray-200">"Build the bedrock. Architect and forge the custom Linux OS, creating a stable, efficient, and reliable foundation for the entire project."</p></blockquote>
+                
+                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
+                    <p class="text-lg italic text-gray-200">"Build the bedrock. Architect and forge the custom Linux OS, creating a stable, efficient foundation for all system components."</p>
+                </blockquote>
                 
                 <div class="space-y-4 flex-grow">
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Core Directives</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="space-y-3 p-4 text-gray-400">
                             <li><strong class="text-gray-200">Board/BSP & Toolchain:</strong> Research and select the optimal SBC. Set up the Board Support Package and cross-compilation toolchain.</li>
                             <li><strong class="text-gray-200">Build System (Yocto/Buildroot):</strong> Manage "recipes" to define all software components in the final Linux image, ensuring it is minimal and optimized.</li>
@@ -66,8 +133,12 @@
                             <li><strong class="text-gray-200">Image Creation & CI:</strong> Automate the OS build process using a CI pipeline (e.g., GitHub Actions) for reproducible builds.</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Key Deliverables</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                             <li>A custom, bootable Linux image (.img file)</li>
                             <li>Software Development Kit (SDK) for other team members</li>
@@ -75,9 +146,13 @@
                             <li>Documentation on how to flash the device</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Collaborators</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
-                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
+                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                            <li><strong>Hardware Engineer:</strong> For device tree and kernel driver requirements.</li>
                            <li><strong>Software Engineer:</strong> To provide the SDK and required system libraries.</li>
                         </ul>
@@ -85,32 +160,51 @@
                 </div>
                 
                 <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Project Oversight Protocol</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">Project Manager & DevOps Lead</div>
+                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
+                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
+                        Project Manager & DevOps Lead
+                    </div>
                 </div>
             </article>
 
             <!-- Team Member 2 -->
-             <article class="role-card rounded-xl p-8 flex flex-col">
+            <article class="role-card rounded-xl p-8 flex flex-col h-full">
                 <div class="flex items-center gap-4 mb-6">
-                    <svg class="h-12 w-12 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
-                    <div><h2 class="text-3xl font-bold text-white">Embedded Software Engineer</h2><p class="text-lg font-medium text-gray-400">Team Member 2</p></div>
+                    <div class="rounded-full bg-blue-900/50 p-3">
+                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Embedded Software Engineer</h2>
+                        <p class="text-lg font-medium text-gray-400">Application & System Logic</p>
+                    </div>
                 </div>
-                <blockquote class="mission-quote p-4 rounded-r-lg my-6"><p class="text-lg italic text-gray-200">"Be the ghost in the machine. Develop the core application logic—the intelligence that acquires, processes, and serves vehicle data."</p></blockquote>
+                
+                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
+                    <p class="text-lg italic text-gray-200">"Be the ghost in the machine. Develop the core application logic—the intelligence that transforms hardware capability into functional value."</p>
+                </blockquote>
                 
                 <div class="space-y-4 flex-grow">
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Core Directives</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="space-y-3 p-4 text-gray-400">
                             <li><strong class="text-gray-200">Network Configuration:</strong> Write scripts for `systemd-networkd` or `NetworkManager` to handle all device network connections.</li>
-                            <li><strong class="text-gray-200">Data Acquisition Daemon:</strong> Write the main background service that continuously reads from the CAN bus, processes data, and logs/publishes it.</li>
+                            <li><strong class="text-gray-200">Data Acquisition Daemon:</strong> Write the main background service that continuously reads from the CAN bus, processes data, and logs/publishes results.</li>
                             <li><strong class="text-gray-200">Systemd Service Management:</strong> Create `systemd` unit files to manage the application's lifecycle (auto-start, auto-restart).</li>
                             <li><strong class="text-gray-200">API & Protocol Design:</strong> Implement the communication protocol (REST/MQTT) and define message schemas (JSON/Protobuf) for the mobile app.</li>
                             <li><strong class="text-gray-200">Logging and Metrics:</strong> Implement robust logging using `journald` to track application behavior and diagnose issues.</li>
                         </ul>
                     </details>
-                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Key Deliverables</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                    
+                    <details>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                             <li>The main data acquisition application binary</li>
                             <li>A clearly documented API for the mobile developer</li>
@@ -118,9 +212,13 @@
                             <li>Cloud server setup for AI processing</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Collaborators</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
-                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
+                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                            <li><strong>Hardware Engineer:</strong> To use the HAL for accessing CAN data.</li>
                            <li><strong>Mobile Developer:</strong> To define and test the API.</li>
                            <li><strong>Linux Engineer:</strong> To get the application included in the OS build.</li>
@@ -129,31 +227,50 @@
                 </div>
 
                 <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Project Oversight Protocol</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">Cloud Integration & Communication Lead</div>
+                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
+                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
+                        Cloud Integration & Communication Lead
+                    </div>
                 </div>
             </article>
 
             <!-- Team Member 3 -->
-            <article class="role-card rounded-xl p-8 flex flex-col">
+            <article class="role-card rounded-xl p-8 flex flex-col h-full">
                 <div class="flex items-center gap-4 mb-6">
-                    <svg class="h-12 w-12 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" /></svg>
-                    <div><h2 class="text-3xl font-bold text-white">Hardware Integration Engineer</h2><p class="text-lg font-medium text-gray-400">Team Member 3</p></div>
+                    <div class="rounded-full bg-blue-900/50 p-3">
+                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Hardware Integration Engineer</h2>
+                        <p class="text-lg font-medium text-gray-400">Physical Interface Development</p>
+                    </div>
                 </div>
-                <blockquote class="mission-quote p-4 rounded-r-lg my-6"><p class="text-lg italic text-gray-200">"Speak for the silicon. Translate the physical world of hardware into the digital language of software, ensuring signals become meaningful data."</p></blockquote>
+                
+                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
+                    <p class="text-lg italic text-gray-200">"Speak for the silicon. Translate the physical world of hardware into the digital language of software through robust interfaces and reliable drivers."</p>
+                </blockquote>
                 
                 <div class="space-y-4 flex-grow">
                      <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Core Directives</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="space-y-3 p-4 text-gray-400">
                             <li><strong class="text-gray-200">Low-Level Hardware Enablement:</strong> Define device tree overlays, specifying pin configurations (pinmux) and enabling CAN/Ethernet controllers.</li>
-                            <li><strong class="text-gray-200">SocketCAN Configuration:</strong> Use standard Linux tools (`ip`, `cansend`) to configure the CAN interface, setting parameters like bitrate.</li>
-                            <li><strong class="text-gray-200">Hardware Abstraction Layer (HAL):</strong> Develop a C/C++ library that provides a simple API for the Software Engineer to access hardware.</li>
+                            <li><strong class="text-gray-200">SocketCAN Configuration:</strong> Use standard Linux tools (`ip`, `cansend`) to configure the CAN interface, setting parameters like bitrate and sample point.</li>
+                            <li><strong class="text-gray-200">Hardware Abstraction Layer (HAL):</strong> Develop a C/C++ library that provides a simple API for the Software Engineer to access hardware resources.</li>
                             <li><strong class="text-gray-200">Diagnostics & Measurement:</strong> Use tools like logic analyzers, `vcan` interfaces, and test scripts to verify hardware functionality and performance.</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Key Deliverables</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                             <li>A stable and well-documented C/C++ HAL library</li>
                             <li>Device tree source files and overlays</li>
@@ -161,9 +278,13 @@
                             <li>Primary technical project documentation</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Collaborators</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
-                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
+                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                            <li><strong>Linux Engineer:</strong> To integrate drivers and device trees into the kernel.</li>
                            <li><strong>Software Engineer:</strong> To provide and support the HAL.</li>
                         </ul>
@@ -171,32 +292,51 @@
                 </div>
 
                 <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Project Oversight Protocol</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">Primary Documentation Lead</div>
+                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
+                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
+                        Primary Documentation Lead
+                    </div>
                 </div>
             </article>
 
             <!-- Team Member 4 -->
-            <article class="role-card rounded-xl p-8 flex flex-col">
+            <article class="role-card rounded-xl p-8 flex flex-col h-full">
                 <div class="flex items-center gap-4 mb-6">
-                    <svg class="h-12 w-12 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
-                    <div><h2 class="text-3xl font-bold text-white">Mobile Application Developer</h2><p class="text-lg font-medium text-gray-400">Team Member 4</p></div>
+                    <div class="rounded-full bg-blue-900/50 p-3">
+                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Mobile Application Developer</h2>
+                        <p class="text-lg font-medium text-gray-400">User Interface & Experience</p>
+                    </div>
                 </div>
-                <blockquote class="mission-quote p-4 rounded-r-lg my-6"><p class="text-lg italic text-gray-200">"Craft the human connection. Transform raw data into an intuitive, elegant, and empowering user experience on Android."</p></blockquote>
+                
+                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
+                    <p class="text-lg italic text-gray-200">"Craft the human connection. Transform raw data into an intuitive, elegant, and empowering user experience that makes complex technology accessible."</p>
+                </blockquote>
                 
                 <div class="space-y-4 flex-grow">
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Core Directives</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="space-y-3 p-4 text-gray-400">
                             <li><strong class="text-gray-200">UI/UX Development:</strong> Build the Android app's user interface using modern tools like Jetpack Compose.</li>
                             <li><strong class="text-gray-200">Networking Client:</strong> Implement the client-side logic to communicate with the device's API using libraries like Retrofit or Ktor.</li>
-                            <li><strong class="text-gray-200">Device Discovery & Config:</strong> Implement a mechanism (mDNS) for the app to find the device on the network and build the UI for initial setup.</li>
+                            <li><strong class="text-gray-200">Device Discovery & Config:</strong> Implement a mechanism (mDNS) for the app to find the device on the network and build the UI for initial configuration.</li>
                             <li><strong class="text-gray-200">Data Visualization:</strong> Create charts, graphs, and gauges within the app to display diagnostic data clearly.</li>
                             <li><strong class="text-gray-200">Beta Distribution & Bug Reporting:</strong> Manage app distribution for testing via Google Play and integrate a bug reporting system.</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Key Deliverables</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                             <li>The final Android application package (.apk/.aab)</li>
                             <li>Source code for the Android app</li>
@@ -204,21 +344,45 @@
                             <li>API documentation from a consumer's perspective</li>
                         </ul>
                     </details>
+                    
                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 rounded-lg"><span class="text-xl font-semibold section-title">Collaborators</span><span class="arrow text-2xl highlight-text">&#9654;</span></summary>
-                         <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
+                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
+                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
+                            <span class="arrow text-white">▶</span>
+                        </summary>
+                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
                            <li><strong>Software Engineer:</strong> To understand, test, and provide feedback on the device API.</li>
                         </ul>
                     </details>
                 </div>
 
                 <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Project Oversight Protocol</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">Supporting Documentation Lead</div>
+                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
+                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
+                        Supporting Documentation Lead
+                    </div>
                 </div>
             </article>
-
         </main>
+
+        <footer class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+            <p>© 2025 OBDCortex. All rights reserved.</p>
+            <p class="mt-2 text-sm">Version 1.2.0 | Last updated: September 2025</p>
+        </footer>
     </div>
     
     <script>
@@ -230,7 +394,16 @@
                 }
             });
         });
+        
+        // Add hover effect to cards
+        document.querySelectorAll('.role-card').forEach((card) => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('transform');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('transform');
+            });
+        });
     </script>
-
 </body>
 </html>
