@@ -3,388 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OBDCortex organizational structure and team roles">
-    <title>OBDCortex - Team Structure & Roles</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Optimized team structure for OBDCortex">
+    <title>OBDCortex • Team Structure & Leadership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-bg: #0D1B2A;
-            --secondary-bg: #1B263B;
-            --border-color: #415A77;
-            --accent-color: #FCA311;
-            --heading-color: #3A86FF;
-            --text-primary: #FFFFFF;
-            --text-secondary: #D1D5DB;
-            --text-tertiary: #9CA3AF;
-        }
-        
         body {
+            background: #0D1B2A;
+            color: #D1D5DB;
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-secondary);
+            margin: 0;
         }
-        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #FCA311;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #3A86FF;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.13rem;
+        }
+        .leader {
+            display: inline-block;
+            background: linear-gradient(90deg,#3A86FF,#0a4ab3 65%);
+            color: #fff;
+            padding: 5px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-bottom: 12px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+            gap: 36px;
+        }
         .role-card {
-            background-color: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            background: #1B263B;
+            border: 1px solid #415A77;
+            border-radius: 12px;
+            padding: 32px 24px;
+            box-shadow: 0 8px 22px -8px rgba(0,0,0,0.3);
+            transition: transform 0.18s, box-shadow 0.18s;
         }
-        
         .role-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.4), 0 8px 10px -2px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 30px -8px rgba(0,0,0,0.4);
         }
-        
-        .mission-quote {
-            border-left: 4px solid var(--accent-color);
-            background-color: rgba(252, 163, 17, 0.05);
+        .role-title {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
         }
-        
-        .highlight-text { 
-            color: var(--accent-color); 
+        .role-desc {
+            color: #D1D5DB;
+            margin-bottom: 12px;
         }
-        
-        .section-title { 
-            color: var(--heading-color); 
+        .section {
+            margin-bottom: 13px;
         }
-        
-        .details-summary {
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.2s ease;
+        .section-title {
+            color: #3A86FF;
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
-        
-        .details-summary::-webkit-details-marker { 
-            display: none; 
+        ul {
+            margin: 0;
+            padding-left: 22px;
+            color: #B2C3D9;
+            margin-bottom: 6px;
         }
-        
-        .details-summary .arrow { 
-            transition: transform 0.3s ease; 
+        .quote {
+            font-style: italic;
+            color: #FCA311;
+            background: rgba(252,163,17,0.09);
+            border-left: 4px solid #FCA311;
+            padding: 9px 16px;
+            border-radius: 0 10px 10px 0;
         }
-        
-        details[open] .details-summary .arrow { 
-            transform: rotate(90deg); 
-        }
-        
         @media print {
             .role-card {
-                break-inside: avoid;
                 page-break-inside: avoid;
             }
         }
     </style>
 </head>
-<body class="text-gray-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header class="text-center mb-16">
-            <div class="mb-4">
-                <!-- Company Logo Placeholder -->
-                <svg class="w-16 h-16 mx-auto highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25zm-6-3h.008v.008h-.008zm0 2.25h.008v.008h-.008zm-11.25 9h.008v.008h-.008zm0 2.25h.008v.008h-.008zm13.5-2.25h.008v.008h-.008zm0 2.25h.008v.008h-.008z" />
-                </svg>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                OBDCortex <span class="highlight-text">Organizational Structure</span>
-            </h1>
-            <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
-                A comprehensive overview of team roles, responsibilities, and interdepartmental collaboration framework.
+<body>
+    <div class="container">
+        <header class="header">
+            <span class="subtitle">OBDCortex</span>
+            <div class="title">Optimized Team Structure & Leadership</div>
+            <p style="max-width: 580px; margin: 0 auto; color: #B2C3D9;">
+                Structured roles for embedded system development using Yocto Linux on Raspberry Pi, ensuring clarity and accountability in documentation, integration, build, and communication.
             </p>
         </header>
+        <main>
+            <div class="team-grid">
 
-        <main class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <!-- Team Member 1 -->
-            <article class="role-card rounded-xl p-8 flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="rounded-full bg-blue-900/50 p-3">
-                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25zm-6-3h.008v.008h-.008zm0 2.25h.008v.008h-.008zm-11.25 9h.008v.008h-.008zm0 2.25h.008v.008h-.008zm13.5-2.25h.008v.008h-.008zm0 2.25h.008v.008h-.008z" />
-                        </svg>
+                <!-- Embedded Linux Engineer -->
+                <div class="role-card">
+                    <div class="role-title">Embedded Linux Engineer</div>
+                    <div class="role-desc">Project Manager & Supervisor • Documentation oversight</div>
+                    <span class="leader">Leadership Role: Project Manager</span>
+                    <div class="section">
+                        <div class="section-title">Key Mission</div>
+                        <p class="quote">
+                            "Establish the Yocto-based OS and build pipeline, ensuring all deliverables are documented and reproducible."
+                        </p>
                     </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">Embedded Linux Engineer</h2>
-                        <p class="text-lg font-medium text-gray-400">Core Infrastructure Development</p>
+                    <div class="section">
+                        <div class="section-title">Main Responsibilities</div>
+                        <ul>
+                            <li>Board support (BSP), kernel, and device-tree integration</li>
+                            <li>Automate Yocto builds (CI/CD)</li>
+                            <li>Provide SDK/images for embedded team</li>
+                            <li>Review and maintain project documentation</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
-                    <p class="text-lg italic text-gray-200">"Establish the foundation. Design and develop the custom Linux OS to create a stable, efficient platform for all system components."</p>
-                </blockquote>
-                
-                <div class="space-y-4 flex-grow">
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="space-y-3 p-4 text-gray-400">
-                            <li><strong class="text-gray-200">Board/BSP & Toolchain:</strong> Research and select the optimal SBC. Set up the Board Support Package and cross-compilation toolchain.</li>
-                            <li><strong class="text-gray-200">Build System (Yocto/Buildroot):</strong> Manage "recipes" to define all software components in the final Linux image, ensuring it is minimized.</li>
-                            <li><strong class="text-gray-200">Kernel Configuration:</strong> Modify the Linux kernel to enable specific drivers (CAN, Ethernet) and disable unused features.</li>
-                            <li><strong class="text-gray-200">Device Tree Integration:</strong> Write/modify device tree source (.dts) files to inform the kernel about the board's specific hardware layout.</li>
-                            <li><strong class="text-gray-200">Image Creation & CI:</strong> Automate the OS build process using a CI pipeline (e.g., GitHub Actions) for reproducible builds.</li>
+                    <div class="section">
+                        <div class="section-title">Cross Collaboration</div>
+                        <ul>
+                            <li>Supports and reviews documentation for all technical roles</li>
+                            <li>Coordinates image updates with integration and middleware engineers</li>
                         </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                            <li>A custom, bootable Linux image (.img file)</li>
-                            <li>Software Development Kit (SDK) for other team members</li>
-                            <li>A fully automated build pipeline</li>
-                            <li>Documentation on how to flash the device</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                           <li><strong>Hardware Engineer:</strong> For device tree and kernel driver requirements.</li>
-                           <li><strong>Software Engineer:</strong> To provide the SDK and required system libraries.</li>
-                        </ul>
-                    </details>
-                </div>
-                
-                <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
-                        Project Manager & DevOps Lead
                     </div>
-                </div>
-            </article>
-
-            <!-- Team Member 2 -->
-            <article class="role-card rounded-xl p-8 flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="rounded-full bg-blue-900/50 p-3">
-                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">Embedded Software Engineer</h2>
-                        <p class="text-lg font-medium text-gray-400">Application & System Logic</p>
-                    </div>
-                </div>
-                
-                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
-                    <p class="text-lg italic text-gray-200">"Implement the core intelligence. Develop the application logic that transforms hardware capabilities into functional, valuable systems."</p>
-                </blockquote>
-                
-                <div class="space-y-4 flex-grow">
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="space-y-3 p-4 text-gray-400">
-                            <li><strong class="text-gray-200">Network Configuration:</strong> Write scripts for `systemd-networkd` or `NetworkManager` to handle all device network connections.</li>
-                            <li><strong class="text-gray-200">Data Acquisition Daemon:</strong> Write the main background service that continuously reads from the CAN bus, processes data, and logs/publishes it.</li>
-                            <li><strong class="text-gray-200">Systemd Service Management:</strong> Create `systemd` unit files to manage the application's lifecycle (auto-start, auto-restart).</li>
-                            <li><strong class="text-gray-200">API & Protocol Design:</strong> Implement the communication protocol (REST/MQTT) and define message schemas (JSON/Protobuf) for the mobile app.</li>
-                            <li><strong class="text-gray-200">Logging and Metrics:</strong> Implement robust logging using `journald` to track application behavior and diagnose issues.</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                            <li>The main data acquisition application binary</li>
-                            <li>A clearly documented API for the mobile developer</li>
-                            <li>Systemd service files</li>
-                            <li>Cloud server setup for AI processing</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                           <li><strong>Hardware Engineer:</strong> To use the HAL for accessing CAN data.</li>
-                           <li><strong>Mobile Developer:</strong> To define and test the API.</li>
-                           <li><strong>Linux Engineer:</strong> To get the application included in the OS build.</li>
-                        </ul>
-                    </details>
                 </div>
 
-                <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
-                        Cloud Integration & Communication Lead
+                <!-- Embedded Software Engineer -->
+                <div class="role-card">
+                    <div class="role-title">Embedded Software Engineer</div>
+                    <div class="role-desc">Cloud Integration & Communication Lead</div>
+                    <span class="leader">Leadership Role: Cloud & API Integration</span>
+                    <div class="section">
+                        <div class="section-title">Key Mission</div>
+                        <p class="quote">
+                            "Transform hardware data into actionable intelligence and maintain reliable cloud/api interfaces."
+                        </p>
                     </div>
-                </div>
-            </article>
-
-            <!-- Team Member 3 -->
-            <article class="role-card rounded-xl p-8 flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="rounded-full bg-blue-900/50 p-3">
-                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
-                        </svg>
+                    <div class="section">
+                        <div class="section-title">Main Responsibilities</div>
+                        <ul>
+                            <li>Design and implement CAN bus data parsing and processing</li>
+                            <li>Develop core daemons and API protocol (REST/MQTT)</li>
+                            <li>Maintain communication bridge with mobile/cloud services</li>
+                            <li>Robust logging and service management (systemd)</li>
+                        </ul>
                     </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">Hardware Integration Engineer</h2>
-                        <p class="text-lg font-medium text-gray-400">Physical Interface Development</p>
+                    <div class="section">
+                        <div class="section-title">Cross Collaboration</div>
+                        <ul>
+                            <li>Works with hardware and mobile engineers to test, refine, and document API endpoints</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
-                    <p class="text-lg italic text-gray-200">"Bridge hardware and software. Create the critical connection between physical components and digital systems through robust interfaces and reliable drivers."</p>
-                </blockquote>
-                
-                <div class="space-y-4 flex-grow">
-                     <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="space-y-3 p-4 text-gray-400">
-                            <li><strong class="text-gray-200">Low-Level Hardware Enablement:</strong> Define device tree overlays, specifying pin configurations (pinmux) and enabling CAN/Ethernet controllers.</li>
-                            <li><strong class="text-gray-200">SocketCAN Configuration:</strong> Use standard Linux tools (`ip`, `cansend`) to configure the CAN interface, setting parameters like bitrate.</li>
-                            <li><strong class="text-gray-200">Hardware Abstraction Layer (HAL):</strong> Develop a C/C++ library that provides a simple API for the Software Engineer to access hardware features.</li>
-                            <li><strong class="text-gray-200">Diagnostics & Measurement:</strong> Use tools like logic analyzers, `vcan` interfaces, and test scripts to verify hardware functionality and performance.</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                            <li>A stable and well-documented C/C++ HAL library</li>
-                            <li>Device tree source files and overlays</li>
-                            <li>Test scripts for hardware validation</li>
-                            <li>Primary technical project documentation</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                           <li><strong>Linux Engineer:</strong> To integrate drivers and device trees into the kernel.</li>
-                           <li><strong>Software Engineer:</strong> To provide and support the HAL.</li>
-                        </ul>
-                    </details>
                 </div>
 
-                <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
-                        Primary Documentation Lead
+                <!-- Hardware Integration Engineer -->
+                <div class="role-card">
+                    <div class="role-title">Hardware Integration Engineer</div>
+                    <div class="role-desc">Documentation Lead</div>
+                    <span class="leader">Leadership Role: Documentation</span>
+                    <div class="section">
+                        <div class="section-title">Key Mission</div>
+                        <p class="quote">
+                            "Bridge physical interfaces and digital logic, and maintain main technical documentation for hardware/software integration."
+                        </p>
                     </div>
-                </div>
-            </article>
-
-            <!-- Team Member 4 -->
-            <article class="role-card rounded-xl p-8 flex flex-col h-full">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="rounded-full bg-blue-900/50 p-3">
-                        <svg class="h-10 w-10 highlight-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                        </svg>
+                    <div class="section">
+                        <div class="section-title">Main Responsibilities</div>
+                        <ul>
+                            <li>Enable/validate CAN/Ethernet hardware (device-tree overlays, pinmux)</li>
+                            <li>Develop/maintain HAL libraries (SocketCAN API)</li>
+                            <li>Write test scripts for hardware validation</li>
+                            <li>Owns and updates hardware+integration documents</li>
+                        </ul>
                     </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">Mobile Application Developer</h2>
-                        <p class="text-lg font-medium text-gray-400">User Interface & Experience</p>
+                    <div class="section">
+                        <div class="section-title">Cross Collaboration</div>
+                        <ul>
+                            <li>Works directly with Linux and software engineers to ensure all hardware features are correctly integrated and documented</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <blockquote class="mission-quote p-4 rounded-r-lg my-5">
-                    <p class="text-lg italic text-gray-200">"Create the user experience. Transform technical data into an intuitive, elegant interface that makes complex technology accessible to users."</p>
-                </blockquote>
-                
-                <div class="space-y-4 flex-grow">
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Core Responsibilities</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="space-y-3 p-4 text-gray-400">
-                            <li><strong class="text-gray-200">UI/UX Development:</strong> Build the Android app's user interface using modern tools like Jetpack Compose.</li>
-                            <li><strong class="text-gray-200">Networking Client:</strong> Implement the client-side logic to communicate with the device's API using libraries like Retrofit or Ktor.</li>
-                            <li><strong class="text-gray-200">Device Discovery & Config:</strong> Implement a mechanism (mDNS) for the app to find the device on the network and build the UI for initial setup.</li>
-                            <li><strong class="text-gray-200">Data Visualization:</strong> Create charts, graphs, and gauges within the app to display diagnostic data clearly.</li>
-                            <li><strong class="text-gray-200">Beta Distribution & Bug Reporting:</strong> Manage app distribution for testing via Google Play and integrate a bug reporting system.</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Key Deliverables</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                            <li>The final Android application package (.apk/.aab)</li>
-                            <li>Source code for the Android app</li>
-                            <li>User-facing documentation or help guides</li>
-                            <li>API documentation from a consumer's perspective</li>
-                        </ul>
-                    </details>
-                    
-                    <details>
-                        <summary class="details-summary flex justify-between items-center p-3 bg-[#415A77]/30 hover:bg-[#415A77]/40 rounded-lg">
-                            <span class="text-xl font-semibold section-title">Cross-functional Collaboration</span>
-                            <span class="arrow text-white">▶</span>
-                        </summary>
-                        <ul class="list-disc list-inside p-4 space-y-1 text-gray-400">
-                           <li><strong>Software Engineer:</strong> To understand, test, and provide feedback on the device API.</li>
-                        </ul>
-                    </details>
                 </div>
 
-                <div class="mt-8 pt-4 border-t border-gray-700">
-                    <h4 class="text-lg font-semibold mb-2 text-white text-center">Leadership Responsibility</h4>
-                    <div class="bg-gradient-to-r from-[#3A86FF] to-[#0a4ab3] text-white p-3 rounded-lg text-center font-bold">
-                        Supporting Documentation Lead
+                <!-- Mobile Application Developer -->
+                <div class="role-card">
+                    <div class="role-title">Mobile Application Developer</div>
+                    <div class="role-desc">No formal leadership role</div>
+                    <div class="section">
+                        <div class="section-title">Key Mission</div>
+                        <p class="quote">
+                            "Deliver a user-friendly mobile interface for diagnostics, configuration, and visualization."
+                        </p>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Main Responsibilities</div>
+                        <ul>
+                            <li>Develop and maintain Android/iOS UI app</li>
+                            <li>Implement networking client to communicate with device API</li>
+                            <li>Build app-based tools for configuration, discovery, and data display</li>
+                            <li>Provide consumer documentation/user guides as needed</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Cross Collaboration</div>
+                        <ul>
+                            <li>Tests API and provides feedback to Embedded Software Engineer</li>
+                        </ul>
                     </div>
                 </div>
-            </article>
+            </div>
         </main>
-
-        <footer class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500">
-            <p>© 2025 OBDCortex. All rights reserved.</p>
-            <p class="mt-2 text-sm">Version 1.2.0 | Last updated: September 2025</p>
+        <footer style="text-align:center;font-size:0.92rem;color:#999;margin-top:38px;">
+            <div>© 2025 OBDCortex. All rights reserved. &ndash; Team Structure v2 &ndash; Last Updated September 2025</div>
         </footer>
     </div>
-    
-    <script>
-        // Smooth scrolling for details opening
-        document.querySelectorAll('details').forEach((detail) => {
-            detail.addEventListener('toggle', () => {
-                if (detail.open) {
-                    detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        });
-        
-        // Add hover effect to cards
-        document.querySelectorAll('.role-card').forEach((card) => {
-            card.addEventListener('mouseenter', () => {
-                card.classList.add('transform');
-            });
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('transform');
-            });
-        });
-    </script>
 </body>
 </html>
