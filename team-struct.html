@@ -1,236 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Optimized team structure for OBDCortex">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Optimized and visually appealing team structure for OBDCortex" />
     <title>OBDCortex • Team Structure & Leadership</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
             background: #0D1B2A;
             color: #D1D5DB;
             font-family: 'Inter', sans-serif;
             margin: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 32px 16px;
+            padding: 40px 24px;
+            flex-grow: 1;
         }
-        .header {
+        header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 56px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #375c9c66;
         }
-        .title {
-            font-size: 2.8rem;
+        .title-main {
+            font-size: 3rem;
             font-weight: 700;
             color: #FCA311;
-            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
         }
-        .subtitle {
+        .subtitle-main {
             color: #3A86FF;
-            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 4px;
-            letter-spacing: 0.13rem;
-        }
-        .leader {
-            display: inline-block;
-            background: linear-gradient(90deg,#3A86FF,#0a4ab3 65%);
-            color: #fff;
-            padding: 5px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-top: 10px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             margin-bottom: 12px;
+        }
+        .description-main {
+            max-width: 600px;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: #a7b1d2;
+            margin: 0 auto;
         }
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 36px;
         }
         .role-card {
             background: #1B263B;
             border: 1px solid #415A77;
-            border-radius: 12px;
-            padding: 32px 24px;
-            box-shadow: 0 8px 22px -8px rgba(0,0,0,0.3);
-            transition: transform 0.18s, box-shadow 0.18s;
+            border-radius: 15px;
+            padding: 36px 28px;
+            box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.38);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .role-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 15px 30px -8px rgba(0,0,0,0.4);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 18px 38px -12px rgba(0, 0, 0, 0.54);
         }
         .role-title {
-            font-size: 1.55rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
         }
-        .role-desc {
-            color: #D1D5DB;
-            margin-bottom: 12px;
+        .role-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #b3c0e5;
+            margin-bottom: 18px;
+            letter-spacing: 0.04em;
         }
-        .section {
-            margin-bottom: 13px;
+        .leader-role {
+            background: linear-gradient(90deg, #3A86FF, #0a4ab3);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 22px;
+            max-width: 290px;
+            user-select: none;
+            box-shadow: 0 4px 10px rgba(58, 134, 255, 0.6);
+            transition: box-shadow 0.3s ease;
+        }
+        .leader-role:hover {
+            box-shadow: 0 8px 18px rgba(58, 134, 255, 0.8);
         }
         .section-title {
-            color: #3A86FF;
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 4px;
-        }
-        ul {
-            margin: 0;
-            padding-left: 22px;
-            color: #B2C3D9;
-            margin-bottom: 6px;
+            color: #3A86FF;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #415A77;
+            padding-bottom: 4px;
         }
         .quote {
             font-style: italic;
             color: #FCA311;
-            background: rgba(252,163,17,0.09);
-            border-left: 4px solid #FCA311;
-            padding: 9px 16px;
-            border-radius: 0 10px 10px 0;
+            background: rgba(252, 163, 17, 0.12);
+            border-left: 5px solid #FCA311;
+            padding: 11px 18px;
+            border-radius: 0 14px 14px 0;
+            margin: 16px 0 24px 0;
+            font-weight: 600;
         }
-        @media print {
+        ul {
+            margin: 0 0 26px 20px;
+            padding: 0;
+            color: #9BB0D9;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+        .footer {
+            padding: 24px;
+            text-align: center;
+            font-size: 0.93rem;
+            color: #7a85a3;
+            background: #0B162B;
+            border-top: 1px solid #375c9c66;
+            user-select: none;
+        }
+        @media (max-width: 450px) {
             .role-card {
-                page-break-inside: avoid;
+                padding: 28px 20px;
+            }
+            .role-title {
+                font-size: 1.49rem;
+            }
+            .leader-role {
+                max-width: 100%;
+                font-size: 1rem;
+                padding: 5px 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <span class="subtitle">OBDCortex</span>
-            <div class="title">Optimized Team Structure & Leadership</div>
-            <p style="max-width: 580px; margin: 0 auto; color: #B2C3D9;">
-                Structured roles for embedded system development using Yocto Linux on Raspberry Pi, ensuring clarity and accountability in documentation, integration, build, and communication.
+        <header>
+            <div class="subtitle-main">OBDCortex</div>
+            <h1 class="title-main">Team Structure & Leadership</h1>
+            <p class="description-main">
+                Defined roles for embedded Linux development, integration, and documentation to deliver a robust automotive diagnostics system.
             </p>
         </header>
-        <main>
-            <div class="team-grid">
+        <main class="team-grid">
 
-                <!-- Embedded Linux Engineer -->
-                <div class="role-card">
-                    <div class="role-title">Embedded Linux Engineer</div>
-                    <div class="role-desc">Project Manager & Supervisor • Documentation oversight</div>
-                    <span class="leader">Leadership Role: Project Manager</span>
+            <!-- Embedded Linux Engineer -->
+            <section class="role-card" aria-label="Embedded Linux Engineer role">
+                <div>
+                    <h2 class="role-title">Embedded Linux Engineer</h2>
+                    <div class="role-subtitle">Project Manager & Supervisor • Documentation Oversight</div>
+                    <div class="leader-role" aria-label="Project Manager leadership role">Project Manager</div>
                     <div class="section">
-                        <div class="section-title">Key Mission</div>
-                        <p class="quote">
-                            "Establish the Yocto-based OS and build pipeline, ensuring all deliverables are documented and reproducible."
-                        </p>
+                        <h3 class="section-title">Key Mission</h3>
+                        <p class="quote">"Establish the Yocto-based OS and build pipeline, ensuring all deliverables are documented and reproducible."</p>
                     </div>
                     <div class="section">
-                        <div class="section-title">Main Responsibilities</div>
+                        <h3 class="section-title">Main Responsibilities</h3>
                         <ul>
                             <li>Board support (BSP), kernel, and device-tree integration</li>
-                            <li>Automate Yocto builds (CI/CD)</li>
-                            <li>Provide SDK/images for embedded team</li>
-                            <li>Review and maintain project documentation</li>
+                            <li>Automate Yocto builds and manage CI/CD pipelines</li>
+                            <li>Provide SDK and system images to embedded developers</li>
+                            <li>Review and maintain comprehensive project documentation</li>
                         </ul>
                     </div>
                     <div class="section">
-                        <div class="section-title">Cross Collaboration</div>
+                        <h3 class="section-title">Cross Collaboration</h3>
                         <ul>
-                            <li>Supports and reviews documentation for all technical roles</li>
-                            <li>Coordinates image updates with integration and middleware engineers</li>
+                            <li>Supports documentation and kernel-related needs of other technical roles</li>
+                            <li>Coordinates build and image updates with Embedded Software and Hardware engineers</li>
                         </ul>
                     </div>
                 </div>
+            </section>
 
-                <!-- Embedded Software Engineer -->
-                <div class="role-card">
-                    <div class="role-title">Embedded Software Engineer</div>
-                    <div class="role-desc">Cloud Integration & Communication Lead</div>
-                    <span class="leader">Leadership Role: Cloud & API Integration</span>
+            <!-- Embedded Software Engineer -->
+            <section class="role-card" aria-label="Embedded Software Engineer role">
+                <div>
+                    <h2 class="role-title">Embedded Software Engineer</h2>
+                    <div class="role-subtitle">Cloud Integration & Communication Lead</div>
+                    <div class="leader-role" aria-label="Cloud Integration leadership role">Lead: Cloud & API Integration</div>
                     <div class="section">
-                        <div class="section-title">Key Mission</div>
-                        <p class="quote">
-                            "Transform hardware data into actionable intelligence and maintain reliable cloud/api interfaces."
-                        </p>
+                        <h3 class="section-title">Key Mission</h3>
+                        <p class="quote">"Transform hardware data into actionable intelligence and maintain reliable cloud and API interfaces."</p>
                     </div>
                     <div class="section">
-                        <div class="section-title">Main Responsibilities</div>
+                        <h3 class="section-title">Main Responsibilities</h3>
                         <ul>
-                            <li>Design and implement CAN bus data parsing and processing</li>
-                            <li>Develop core daemons and API protocol (REST/MQTT)</li>
-                            <li>Maintain communication bridge with mobile/cloud services</li>
-                            <li>Robust logging and service management (systemd)</li>
+                            <li>Develop CAN bus data parsing and diagnostic processing</li>
+                            <li>Create core daemons and implement API protocols (REST, MQTT)</li>
+                            <li>Maintain communication bridge with mobile and cloud services</li>
+                            <li>Implement robust logging and service management (systemd)</li>
                         </ul>
                     </div>
                     <div class="section">
-                        <div class="section-title">Cross Collaboration</div>
+                        <h3 class="section-title">Cross Collaboration</h3>
                         <ul>
-                            <li>Works with hardware and mobile engineers to test, refine, and document API endpoints</li>
+                            <li>Works with Hardware Integration and Mobile teams to test and document APIs</li>
                         </ul>
                     </div>
                 </div>
+            </section>
 
-                <!-- Hardware Integration Engineer -->
-                <div class="role-card">
-                    <div class="role-title">Hardware Integration Engineer</div>
-                    <div class="role-desc">Documentation Lead</div>
-                    <span class="leader">Leadership Role: Documentation</span>
+            <!-- Hardware Integration Engineer -->
+            <section class="role-card" aria-label="Hardware Integration Engineer role">
+                <div>
+                    <h2 class="role-title">Hardware Integration Engineer</h2>
+                    <div class="role-subtitle">Documentation Lead</div>
+                    <div class="leader-role" aria-label="Documentation leadership role">Documentation Lead</div>
                     <div class="section">
-                        <div class="section-title">Key Mission</div>
-                        <p class="quote">
-                            "Bridge physical interfaces and digital logic, and maintain main technical documentation for hardware/software integration."
-                        </p>
+                        <h3 class="section-title">Key Mission</h3>
+                        <p class="quote">"Bridge physical interfaces and digital logic, and maintain main technical documentation for hardware/software integration."</p>
                     </div>
                     <div class="section">
-                        <div class="section-title">Main Responsibilities</div>
+                        <h3 class="section-title">Main Responsibilities</h3>
                         <ul>
-                            <li>Enable/validate CAN/Ethernet hardware (device-tree overlays, pinmux)</li>
-                            <li>Develop/maintain HAL libraries (SocketCAN API)</li>
-                            <li>Write test scripts for hardware validation</li>
-                            <li>Owns and updates hardware+integration documents</li>
+                            <li>Configure CAN/Ethernet hardware (device-tree overlays, pinmux)</li>
+                            <li>Develop and maintain HAL libraries (e.g. SocketCAN API in C/C++)</li>
+                            <li>Create test scripts for hardware validation and diagnostics</li>
+                            <li>Own and update hardware and integration documentation</li>
                         </ul>
                     </div>
                     <div class="section">
-                        <div class="section-title">Cross Collaboration</div>
+                        <h3 class="section-title">Cross Collaboration</h3>
                         <ul>
-                            <li>Works directly with Linux and software engineers to ensure all hardware features are correctly integrated and documented</li>
+                            <li>Coordinates closely with Embedded Linux Engineer and Software Engineer</li>
                         </ul>
                     </div>
                 </div>
+            </section>
 
-                <!-- Mobile Application Developer -->
-                <div class="role-card">
-                    <div class="role-title">Mobile Application Developer</div>
-                    <div class="role-desc">No formal leadership role</div>
+            <!-- Mobile Application Developer -->
+            <section class="role-card" aria-label="Mobile Application Developer role">
+                <div>
+                    <h2 class="role-title">Mobile Application Developer</h2>
+                    <div class="role-subtitle">No Formal Leadership Role</div>
                     <div class="section">
-                        <div class="section-title">Key Mission</div>
-                        <p class="quote">
-                            "Deliver a user-friendly mobile interface for diagnostics, configuration, and visualization."
-                        </p>
+                        <h3 class="section-title">Key Mission</h3>
+                        <p class="quote">"Deliver a user-friendly mobile interface for diagnostics, configuration, and visualization."</p>
                     </div>
                     <div class="section">
-                        <div class="section-title">Main Responsibilities</div>
+                        <h3 class="section-title">Main Responsibilities</h3>
                         <ul>
-                            <li>Develop and maintain Android/iOS UI app</li>
-                            <li>Implement networking client to communicate with device API</li>
-                            <li>Build app-based tools for configuration, discovery, and data display</li>
-                            <li>Provide consumer documentation/user guides as needed</li>
+                            <li>Develop Android/iOS app UI using modern frameworks (Jetpack Compose, Flutter)</li>
+                            <li>Implement networking client communicating with device APIs</li>
+                            <li>Build app tools for configuration, device discovery, and real-time data display</li>
+                            <li>Create user-facing help guides and API consumer documentation</li>
                         </ul>
                     </div>
                     <div class="section">
-                        <div class="section-title">Cross Collaboration</div>
+                        <h3 class="section-title">Cross Collaboration</h3>
                         <ul>
-                            <li>Tests API and provides feedback to Embedded Software Engineer</li>
+                            <li>Tests APIs and provides feedback to Embedded Software Engineer</li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
+
         </main>
-        <footer style="text-align:center;font-size:0.92rem;color:#999;margin-top:38px;">
-            <div>© 2025 OBDCortex. All rights reserved. &ndash; Team Structure v2 &ndash; Last Updated September 2025</div>
-        </footer>
     </div>
+    <footer class="footer">
+        © 2025 OBDCortex. All rights reserved. — Team Structure v2 — Last Updated September 2025
+    </footer>
 </body>
 </html>
